@@ -48,7 +48,7 @@ int main(void){
   
   if(tentativasJogador > tentativasComputador){
     printf("Computador ganhou de %d tentativas cotra %d tentativas", tentativasComputador, tentativasJogador);
-  }else if(tentativasJogador > tentativasComputador){
+  }else if(tentativasJogador < tentativasComputador){
     printf("Jogador ganhou de %d tentativas cotra %d tentativas", tentativasJogador, tentativasComputador);
   }else{
     printf("Jogo Empatou");
@@ -149,7 +149,11 @@ int main(void){
         printf("Voce Acertou na %d tentativa!\n", cont);
         break;
       }else{
-        printf("Voce errou!\n \n");
+        if(tentativa < vetorSorteio[indiceSorteio]){
+          printf("Voce errou! Muito baixo o valor.\n \n");
+        }else{
+          printf("Voce errou! Muito alto o valor.\n \n");
+        }
       }
     }
     
